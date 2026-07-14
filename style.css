@@ -37,14 +37,14 @@ body {
 
     align-items: center;
 
-    background:
+   background:
 
     linear-gradient(
-        rgba(0,0,0,.75),
+        rgba(0,0,0,.8),
         rgba(0,0,0,.95)
     ),
 
-    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+    url("https://images.unsplash.com/photo-1497366811353-6870744d04b2");
 
     background-size: cover;
 
@@ -197,7 +197,7 @@ header h1 {
     rgba(0,0,0,.75)
     ),
 
-    url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f");
+    url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23");
 
     background-size:cover;
 
