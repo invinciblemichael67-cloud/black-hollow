@@ -15,7 +15,6 @@ const items = document.getElementById("items");
 const clues = document.getElementById("clues");
 
 
-
 let inventory = [];
 
 let discoveredClues = [];
@@ -23,7 +22,6 @@ let discoveredClues = [];
 
 
 // START GAME
-
 
 startButton.onclick = function(){
 
@@ -63,18 +61,10 @@ startButton.onclick = function(){
     `;
 
 };
-`
 
 
 
-
-};
-
-
-
-
-// ADD ITEM FUNCTION
-
+// ADD ITEM
 
 function addItem(item){
 
@@ -91,15 +81,13 @@ function addItem(item){
 
 
 
-// ADD CLUE FUNCTION
-
+// ADD CLUE
 
 function addClue(clue){
 
     if(!discoveredClues.includes(clue)){
 
         discoveredClues.push(clue);
-
 
         clues.innerHTML =
         discoveredClues
@@ -114,101 +102,90 @@ function addClue(clue){
 
 // DESK
 
-
 function inspectDesk(){
 
+    messageBox.innerHTML =
 
-messageBox.innerHTML =
+    `
+    <div id="speaker">
+    Investigation
+    </div>
 
-`
-You search the old sheriff's desk.
+    You search the old sheriff's desk.
 
-Inside the drawer you find a rusty key.
+    <br><br>
 
-The tag reads:
+    Inside you find a rusty key.
 
-"Cell 7"
+    The tag reads:
 
-`;
-
-
-
-addItem("Rusty Cell Key");
-
-
-addClue("A key labeled Cell 7 was found.");
+    <b>Cell 7</b>
+    `;
 
 
+    addItem("Rusty Cell Key");
+
+    addClue("A key labeled Cell 7 was discovered.");
 
 }
-
 
 
 
 // CELL
 
-
 function inspectCell(){
 
+    messageBox.innerHTML =
 
-messageBox.innerHTML =
+    `
+    <div id="speaker">
+    Cell 7
+    </div>
 
-`
-You approach Cell 7.
+    The bars are covered in scratches.
 
-The bars are covered in scratches.
+    <br><br>
 
-On the wall someone carved:
+    Someone carved:
 
-<br><br>
+    <br><br>
 
-<b>"HE NEVER LEFT."</b>
+    <b>"HE NEVER LEFT"</b>
 
-<br><br>
-
-Something is hidden beneath the old blanket...
-
-`;
-
+    `;
 
 
-addClue("Message found inside Cell 7.");
-
-
+    addClue("A strange message was found in Cell 7.");
 
 }
 
 
 
-
 // LANTERN
-
 
 function inspectLantern(){
 
+    messageBox.innerHTML =
 
-messageBox.innerHTML =
+    `
+    <div id="speaker">
+    Lantern
+    </div>
 
-`
-You lift the lantern.
+    The flame flickers.
 
-The flame flickers.
+    <br><br>
 
-For a moment...
+    For a moment, a shadow appears behind you...
 
-you see a shadow standing behind you.
+    <br><br>
 
-You turn around.
+    Then it disappears.
 
-Nobody is there.
-
-`;
-
-
-
-addClue("A strange shadow appeared near the lantern.");
+    `;
 
 
+    addClue("A mysterious shadow appeared near the lantern.");
 
 }
 
@@ -216,70 +193,50 @@ addClue("A strange shadow appeared near the lantern.");
 
 // DOOR
 
-
 function inspectDoor(){
 
-
-if(inventory.includes("Rusty Cell Key")){
-
-
-messageBox.innerHTML =
-
-`
-The rusty key fits.
-
-The lock clicks open.
-
-The next part of the jail awaits...
-
-`;
-
-addClue("Cell 7 has been unlocked.");
+    if(inventory.includes("Rusty Cell Key")){
 
 
+        messageBox.innerHTML =
 
-}
+        `
+        <div id="speaker">
+        Locked Door
+        </div>
 
-else{
+        The rusty key turns.
 
+        <br><br>
 
-messageBox.innerHTML =
+        The door slowly opens...
 
-`
-The iron door will not open.
-
-A keyhole stares back at you.
-
-`;
-
-}
+        `;
 
 
-}
+        addClue("The Cell 7 door has been unlocked.");
 
 
+    }
 
-// RANDOM LIGHTNING EFFECT
-
-
-setInterval(()=>{
+    else{
 
 
-if(!gameScreen.classList.contains("hidden")){
+        messageBox.innerHTML =
 
+        `
+        <div id="speaker">
+        Locked Door
+        </div>
 
-document.body.style.filter="brightness(1.8)";
+        The iron door will not open.
 
+        <br><br>
 
-setTimeout(()=>{
+        A keyhole is visible.
 
-document.body.style.filter="brightness(1)";
+        `;
 
-
-},120);
-
+    }
 
 }
-
-
-},15000);
