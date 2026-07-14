@@ -344,3 +344,69 @@ header {
     border:1px solid #8b6b3f;
 
 }
+/* PUZZLE WINDOW */
+
+
+#puzzleWindow {
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.8);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:10;
+
+}
+
+
+
+#puzzleBox {
+
+    background:#120d09;
+
+    border:3px solid #c9a86a;
+
+    padding:40px;
+
+    width:400px;
+
+    text-align:center;
+
+    box-shadow:0 0 50px black;
+
+}
+
+
+
+#puzzleBox h2 {
+
+    color:#c9a86a;
+
+}
+
+
+
+#puzzleInput {
+
+    margin:20px;
+
+    padding:10px;
+
+    width:200px;
+
+    background:#000;
+
+    color:#e8d7b5;
+
+    border:1px solid #c9a86a;
+
+    font-size:20px;
+
+}
