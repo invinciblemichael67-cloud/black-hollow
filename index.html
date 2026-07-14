@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Hollow: The Jail Mystery</title>
 
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="titleScreen">
+
+<h1>BLACK HOLLOW</h1>
+
+<h2>The Jail Mystery</h2>
+
+<p>October, 1888</p>
+
+<button id="startButton">
+Begin Investigation
+</button>
+
+</div>
+
+<div id="gameScreen" class="hidden">
+
+<div id="topBar">
+
+<div id="location">
+Black Hollow Jail
+</div>
+
+<div id="inventory">
+Inventory:
+<span id="items">Notebook</span>
+</div>
+
+</div>
+
+<div id="room">
+
+<img
+id="roomImage"
+src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=1400&q=80">
+
+<div id="messageBox">
+
+You arrive at the abandoned jail...
+
+Something feels wrong.
+
+Click around to investigate.
+
+</div>
+
+</div>
+
+<div id="buttons">
+
+<button onclick="inspectDesk()">
+
+Desk
+
+</button>
+
+<button onclick="inspectCell()">
+
+Cell 7
+
+</button>
+
+<button onclick="inspectDoor()">
+
+Locked Door
+
+</button>
+
+</div>
+
+</div>
+
+<script src="game.js"></script>
+
+</body>
+</html>
