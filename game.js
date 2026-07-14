@@ -32,8 +32,33 @@ startButton.onclick = function(){
     gameScreen.classList.remove("hidden");
 
 
-   messageBox.innerHTML =
+    document.getElementById("speaker").innerHTML =
+    "Sheriff Crowe";
 
+
+    document.getElementById("dialogue").innerHTML =
+
+    `
+    "You're the detective they sent?"
+
+    <br><br>
+
+    The sheriff adjusts his coat.
+
+    <br><br>
+
+    "Judge Graves was found inside Cell 7."
+
+    <br><br>
+
+    "Nobody entered. Nobody left."
+
+    <br><br>
+
+    "Find the truth... before Black Hollow buries it forever."
+    `;
+
+};
 `
 
 <div id="speaker">
