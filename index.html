@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Black Hollow: The Gallows Mystery</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<!-- TITLE SCREEN -->
+
+<div id="titleScreen">
+
+    <div class="titleBox">
+
+        <h1>BLACK HOLLOW</h1>
+
+        <h2>The Gallows Mystery</h2>
+
+        <p>October 14, 1888</p>
+
+        <button id="startButton">
+            Begin Investigation
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- GAME SCREEN -->
+
+<div id="gameScreen" class="hidden">
+
+
+<header>
+
+<h1>Black Hollow Jail</h1>
+
+<p id="objective">
+Objective: Investigate Cell 7
+</p>
+
+</header>
+
+
+
+<!-- GAME AREA -->
+
+<div id="gameArea">
+
+
+<!-- BACKGROUND IMAGE PLACEHOLDER -->
+
+<div id="jailRoom">
+
+
+<!-- CLICKABLE OBJECTS -->
+
+
+<div 
+class="hotspot desk"
+onclick="inspectDesk()">
+</div>
+
+
+
+<div 
+class="hotspot cell"
+onclick="inspectCell()">
+</div>
+
+
+
+<div 
+class="hotspot lantern"
+onclick="inspectLantern()">
+</div>
+
+
+
+<div 
+class="hotspot door"
+onclick="inspectDoor()">
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- MESSAGE BOX -->
+
+<div id="messageBox">
+
+You enter Black Hollow Jail.
+
+The rain beats against the windows.
+
+Something terrible happened here...
+
+</div>
+
+
+
+
+<!-- INVENTORY -->
+
+<div id="inventory">
+
+<h3>Detective Notebook</h3>
+
+
+<ul id="clues">
+
+<li>Empty</li>
+
+</ul>
+
+
+
+<h3>Inventory</h3>
+
+
+<div id="items">
+
+No items collected.
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<script src="game.js"></script>
+
+
+</body>
+
+</html>
