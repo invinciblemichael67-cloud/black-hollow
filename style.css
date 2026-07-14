@@ -1,123 +1,352 @@
-body{
+/* BLACK HOLLOW: THE GALLOWS MYSTERY
+   Main Victorian Horror Styling
+*/
 
-margin:0;
 
-background:#111;
+* {
+    box-sizing: border-box;
+}
 
-color:white;
 
-font-family:Georgia, serif;
+body {
+
+    margin: 0;
+
+    background: #080808;
+
+    color: #e8d7b5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow-x: hidden;
 
 }
 
-.hidden{
 
-display:none;
 
-}
+/* TITLE SCREEN */
 
-#titleScreen{
 
-height:100vh;
+#titleScreen {
 
-display:flex;
+    height: 100vh;
 
-flex-direction:column;
+    display: flex;
 
-justify-content:center;
+    justify-content: center;
 
-align-items:center;
+    align-items: center;
 
-background:black;
+    background:
 
-background-image:linear-gradient(#111,#000);
+    linear-gradient(
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.95)
+    ),
 
-}
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
 
-h1{
+    background-size: cover;
 
-font-size:70px;
-
-letter-spacing:6px;
+    background-position: center;
 
 }
 
-button{
 
-padding:15px 30px;
 
-font-size:20px;
+.titleBox {
 
-cursor:pointer;
+    text-align: center;
 
-background:#6b1b1b;
+    padding: 40px;
 
-color:white;
+    background: rgba(0,0,0,.75);
 
-border:none;
+    border: 2px solid #8b6b3f;
 
-border-radius:8px;
+    box-shadow: 0 0 40px black;
 
 }
 
-button:hover{
 
-background:#9d2c2c;
 
-}
+.titleBox h1 {
 
-#room{
+    font-size: 70px;
 
-text-align:center;
+    letter-spacing: 12px;
 
-margin-top:20px;
+    color: #c9a86a;
 
-}
+    text-shadow:
 
-#room img{
-
-width:80%;
-
-border:4px solid #444;
-
-border-radius:10px;
+    0 0 10px black;
 
 }
 
-#messageBox{
 
-width:80%;
 
-margin:auto;
+.titleBox h2 {
 
-margin-top:20px;
+    font-style: italic;
 
-padding:20px;
-
-background:#222;
-
-border-left:6px solid darkred;
-
-font-size:20px;
+    font-weight: normal;
 
 }
 
-#buttons{
 
-margin:30px;
 
-text-align:center;
+button {
+
+    margin-top: 30px;
+
+    padding: 15px 35px;
+
+    background:#3b1b14;
+
+    color:#e8d7b5;
+
+    border:1px solid #c9a86a;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    font-family:inherit;
 
 }
 
-#topBar{
 
-display:flex;
 
-justify-content:space-between;
+button:hover {
 
-padding:15px;
+    background:#6b3023;
 
-background:#1b1b1b;
+}
+
+
+
+/* GAME SCREEN */
+
+
+.hidden {
+
+    display:none;
+
+}
+
+
+
+header {
+
+    padding:20px;
+
+    text-align:center;
+
+    background:#130d09;
+
+    border-bottom:2px solid #8b6b3f;
+
+}
+
+
+
+header h1 {
+
+    margin:0;
+
+    letter-spacing:5px;
+
+}
+
+
+
+#objective {
+
+    color:#c9a86a;
+
+}
+
+
+
+/* JAIL ROOM */
+
+
+#gameArea {
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+
+#jailRoom {
+
+    width:900px;
+
+    height:500px;
+
+    position:relative;
+
+    background:
+
+    linear-gradient(
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.75)
+    ),
+
+    url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f");
+
+    background-size:cover;
+
+    background-position:center;
+
+    border:5px solid #4a3420;
+
+    box-shadow:
+
+    0 0 50px black;
+
+}
+
+
+
+/* CLICKABLE AREAS */
+
+
+.hotspot {
+
+    position:absolute;
+
+    cursor:pointer;
+
+}
+
+
+
+.hotspot:hover {
+
+    background:rgba(255,220,120,.15);
+
+    box-shadow:0 0 20px #c9a86a;
+
+}
+
+
+
+/* OBJECT LOCATIONS */
+
+
+.desk {
+
+    width:150px;
+
+    height:100px;
+
+    bottom:70px;
+
+    left:120px;
+
+}
+
+
+
+.cell {
+
+    width:160px;
+
+    height:260px;
+
+    top:80px;
+
+    right:180px;
+
+}
+
+
+
+.lantern {
+
+    width:60px;
+
+    height:80px;
+
+    top:80px;
+
+    left:430px;
+
+}
+
+
+
+.door {
+
+    width:100px;
+
+    height:220px;
+
+    right:40px;
+
+    top:100px;
+
+}
+
+
+
+/* MESSAGE BOX */
+
+
+#messageBox {
+
+    width:80%;
+
+    margin:25px auto;
+
+    padding:20px;
+
+    min-height:80px;
+
+    background:#18100b;
+
+    border-left:5px solid #8b6b3f;
+
+    font-size:20px;
+
+}
+
+
+
+/* INVENTORY */
+
+
+#inventory {
+
+    margin:20px auto;
+
+    width:80%;
+
+    padding:20px;
+
+    background:#130d09;
+
+    border:1px solid #8b6b3f;
+
+}
+
+
+
+#items {
+
+    color:#c9a86a;
+
+}
+
+
+
+#clues li {
+
+    list-style:none;
 
 }
