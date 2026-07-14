@@ -371,3 +371,27 @@ header h1 {
     list-style:none;
 
 }
+#speaker {
+
+color:#c9a86a;
+
+font-size:24px;
+
+font-weight:bold;
+
+margin-bottom:10px;
+
+border-bottom:1px solid #8b6b3f;
+
+padding-bottom:5px;
+
+}
+
+
+#dialogue {
+
+font-size:20px;
+
+line-height:1.5;
+
+}
