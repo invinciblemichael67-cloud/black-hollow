@@ -1,1 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Black Hollow: The Gallows Mystery</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div id="titleScreen">
+
+    <div class="titleCard">
+
+        <h1>BLACK HOLLOW</h1>
+
+        <h2>The Gallows Mystery</h2>
+
+        <p>Black Hollow Jail — 1888</p>
+
+        <button id="startButton">
+            Begin Investigation
+        </button>
+
+    </div>
+
+</div>
+
+
+
+
+<div id="gameScreen" class="hidden">
+
+
+<header>
+
+<h1>Black Hollow Jail</h1>
+
+<p id="objective">
+Objective: Investigate the crime scene
+</p>
+
+</header>
+
+
+
+<div id="jailRoom">
+
+
+<div class="object desk" onclick="inspectDesk()">
+
+🗄️
+<br>
+Old Desk
+
+</div>
+
+
+
+<div class="object cell" onclick="inspectCell()">
+
+⛓️
+<br>
+Cell 7
+
+</div>
+
+
+
+
+<div class="object lantern" onclick="inspectLantern()">
+
+🕯️
+<br>
+Lantern
+
+</div>
+
+
+
+<div class="object door" onclick="inspectDoor()">
+
+🚪
+<br>
+Jail Door
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div id="messageBox">
+
+<div id="speaker">
+
+Sheriff Crowe
+
+</div>
+
+
+<div id="dialogue">
+
+Welcome to Black Hollow Jail.
+
+Something terrible happened here.
+
+</div>
+
+
+</div>
+
+
+
+
+<div id="inventory">
+
+<h2>Detective Notebook</h2>
+
+
+<ul id="clues">
+
+<li>No clues found.</li>
+
+</ul>
+
+
+<h2>Inventory</h2>
+
+
+<div id="items">
+
+Empty
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<script src="game.js"></script>
+
+
+</body>
+
+</html>
