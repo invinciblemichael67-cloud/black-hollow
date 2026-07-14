@@ -14,7 +14,16 @@ const dialogue = document.getElementById("dialogue");
 const items = document.getElementById("items");
 
 const clues = document.getElementById("clues");
+const puzzleWindow = document.getElementById("puzzleWindow");
 
+const puzzleTitle = document.getElementById("puzzleTitle");
+
+const puzzleText = document.getElementById("puzzleText");
+
+const puzzleInput = document.getElementById("puzzleInput");
+
+
+let currentPuzzle = "";
 
 
 let inventory = [];
@@ -99,6 +108,10 @@ function addClue(clue){
 
 
 function inspectDesk(){
+
+openPuzzle("desk");
+
+}
 
 speaker.innerHTML="Old Desk";
 
@@ -210,5 +223,120 @@ You need a key.
 `;
 
 }
+
+}
+// PUZZLE SYSTEM
+
+
+function openPuzzle(type){
+
+
+currentPuzzle = type;
+
+
+puzzleWindow.classList.remove("hidden");
+
+
+puzzleInput.value="";
+
+
+
+if(type==="desk"){
+
+
+puzzleTitle.innerHTML =
+"Sheriff's Locked Desk";
+
+
+puzzleText.innerHTML =
+
+`
+The drawer is locked.
+
+<br><br>
+
+A note reads:
+
+<br>
+
+"The year Black Hollow Jail opened."
+
+`;
+
+}
+
+
+}
+
+
+
+
+function closePuzzle(){
+
+puzzleWindow.classList.add("hidden");
+
+}
+
+
+
+
+function checkPuzzle(){
+
+
+let answer = puzzleInput.value;
+
+
+
+if(currentPuzzle==="desk"){
+
+
+if(answer==="1847"){
+
+
+closePuzzle();
+
+
+speaker.innerHTML="Old Desk";
+
+
+dialogue.innerHTML=
+
+`
+The lock clicks open.
+
+<br><br>
+
+Inside you find:
+
+<br><br>
+
+🔑 Rusty Cell Key
+
+<br>
+
+📜 Torn Letter
+
+`;
+
+
+addItem("🔑 Rusty Cell Key");
+
+addClue("A torn letter was found inside the sheriff's desk.");
+
+
+}
+
+else{
+
+
+puzzleText.innerHTML=
+
+"Wrong code. Search the jail for clues.";
+
+}
+
+
+}
+
 
 }
