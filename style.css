@@ -395,3 +395,113 @@ font-size:20px;
 line-height:1.5;
 
 }
+/* BLACK HOLLOW ATMOSPHERE */
+
+
+#jailRoom::after {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 3px,
+        rgba(255,255,255,.03) 4px
+    );
+
+    pointer-events:none;
+
+}
+
+
+/* Rain overlay */
+
+#jailRoom {
+
+    overflow:hidden;
+
+}
+
+
+#jailRoom::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:-50%;
+
+    background:
+
+    repeating-linear-gradient(
+        110deg,
+        rgba(255,255,255,.12) 0px,
+        rgba(255,255,255,.12) 2px,
+        transparent 3px,
+        transparent 12px
+    );
+
+    animation:rain 1s linear infinite;
+
+    pointer-events:none;
+
+}
+
+
+
+@keyframes rain {
+
+    from {
+
+        transform:translateY(-200px);
+
+    }
+
+
+    to {
+
+        transform:translateY(200px);
+
+    }
+
+}
+
+
+
+/* Lantern glow */
+
+.lantern:hover {
+
+    animation:flicker .2s infinite;
+
+}
+
+
+
+@keyframes flicker {
+
+    0% {
+
+        opacity:1;
+
+    }
+
+    50% {
+
+        opacity:.6;
+
+    }
+
+    100% {
+
+        opacity:1;
+
+    }
+
+}
