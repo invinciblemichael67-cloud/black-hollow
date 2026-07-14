@@ -32,13 +32,15 @@ startButton.onclick = function(){
     gameScreen.classList.remove("hidden");
 
 
-    document.getElementById("speaker").innerHTML =
-    "Sheriff Crowe";
-
-
-    document.getElementById("dialogue").innerHTML =
+    messageBox.innerHTML =
 
     `
+    <div id="speaker">
+    Sheriff Crowe
+    </div>
+
+    <div id="dialogue">
+
     "You're the detective they sent?"
 
     <br><br>
@@ -56,6 +58,8 @@ startButton.onclick = function(){
     <br><br>
 
     "Find the truth... before Black Hollow buries it forever."
+
+    </div>
     `;
 
 };
