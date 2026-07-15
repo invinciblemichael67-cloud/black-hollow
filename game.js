@@ -36,11 +36,7 @@ let evidence = [];
 
 startButton.onclick = function(){
 
-    titleScreen.classList.add("hidden");
-
-    gameScreen.classList.remove("hidden");
-
-    document.getElementById("scene").style.display = "block";
+    alert("The investigation has started!");
 
 };
 
