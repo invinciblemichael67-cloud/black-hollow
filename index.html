@@ -55,43 +55,22 @@ Objective: Investigate the crime scene
 
 <div id="jailRoom">
 
+<div id="scene">
 
-<div class="object desk" onclick="inspectDesk()">
+    <img
+        id="sceneImage"
+        src="assets/backgrounds/jail_room.png"
+        alt="Black Hollow Jail">
 
-🗄️
-<br>
-Old Desk
+    <!-- Invisible hotspots -->
 
-</div>
+    <button id="deskSpot" class="hotspot"></button>
 
+    <button id="cellSpot" class="hotspot"></button>
 
+    <button id="lanternSpot" class="hotspot"></button>
 
-<div class="object cell" onclick="inspectCell()">
-
-⛓️
-<br>
-Cell 7
-
-</div>
-
-
-
-
-<div class="object lantern" onclick="inspectLantern()">
-
-🕯️
-<br>
-Lantern
-
-</div>
-
-
-
-<div class="object door" onclick="inspectDoor()">
-
-🚪
-<br>
-Jail Door
+    <button id="doorSpot" class="hotspot"></button>
 
 </div>
 
