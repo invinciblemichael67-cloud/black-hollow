@@ -40,6 +40,10 @@ startButton.onclick = function(){
 
     gameScreen.classList.remove("hidden");
 
+    document.getElementById("scene").style.display = "block";
+
+};
+
 
     speaker.innerHTML = "Sheriff Crowe";
 
