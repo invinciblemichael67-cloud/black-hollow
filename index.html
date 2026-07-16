@@ -13,77 +13,84 @@
 
 </head>
 
-
 <body>
 
+<!-- TITLE SCREEN -->
 
 <div id="titleScreen">
 
-    <div class="titleCard">
+    <h1>BLACK HOLLOW</h1>
 
-        <h1>BLACK HOLLOW</h1>
+    <h2>The Gallows Mystery</h2>
 
-        <h2>The Gallows Mystery</h2>
-
-        <p>Black Hollow Jail — 1888</p>
-
-        <button id="startButton">
-            Begin Investigation
-        </button>
-
-    </div>
+    <button id="startButton">
+        Begin Investigation
+    </button>
 
 </div>
 
-
-
+<!-- GAME -->
 
 <div id="gameScreen" class="hidden">
 
-
 <header>
 
-<h1>Black Hollow Jail</h1>
+<h1>BLACK HOLLOW</h1>
 
-<p id="objective">
-Objective: Investigate the crime scene
-</p>
+<div id="caseNumber">
+
+Case #001
+
+</div>
 
 </header>
 
+<div id="mainLayout">
 
+<!-- LEFT PANEL -->
 
+<aside id="leftPanel">
+
+<h2>Sheriff Crowe</h2>
+
+<div id="portrait">
+
+👮
+
+</div>
+
+<h3>Objective</h3>
+
+<p>
+
+Investigate Cell 7.
+
+</p>
+
+</aside>
+
+<!-- CENTER -->
+
+<main id="centerPanel">
 
 <div id="scene">
 
-    <img 
-    id="sceneImage"
-    src="assets/backgrounds/jail_room.png.png"
-    alt="Black Hollow Jail">
+<img
+id="sceneImage"
+src="assets/backgrounds/jail_room.png"
+alt="Jail Room">
 
-    <!-- Clickable Investigation Areas -->
+<button class="hotspot desk" id="deskSpot"></button>
 
-    <button class="hotspot desk" id="deskSpot"></button>
+<button class="hotspot door" id="doorSpot"></button>
 
-    <button class="hotspot cell" id="cellSpot"></button>
+<button class="hotspot cell" id="cellSpot"></button>
 
-    <button class="hotspot door" id="doorSpot"></button>
-
-    <button class="hotspot window" id="windowSpot"></button>
+<button class="hotspot window" id="windowSpot"></button>
 
 </div>
 
-</div>
-
-
-
-</div>
-
-
-
-
-
-<div id="messageBox">
+<div id="dialogueBox">
 
 <div id="speaker">
 
@@ -91,88 +98,51 @@ Sheriff Crowe
 
 </div>
 
-
 <div id="dialogue">
 
-Welcome to Black Hollow Jail.
-
-Something terrible happened here.
+Click Begin Investigation to start your case.
 
 </div>
 
-
 </div>
 
+</main>
 
+<!-- RIGHT PANEL -->
 
+<aside id="rightPanel">
 
-<div id="inventory">
+<h2>Notebook</h2>
 
-<h2>Detective Notebook</h2>
+<ul id="notes">
 
-
-<ul id="clues">
-
-<li>No clues found.</li>
+<li>No evidence collected.</li>
 
 </ul>
 
-
-<h2>Inventory</h2>
-
-
-<div id="items">
-
-Empty
+</aside>
 
 </div>
 
+<footer>
+
+<h3>Inventory</h3>
+
+<div id="inventory">
+
+<div class="slot"></div>
+<div class="slot"></div>
+<div class="slot"></div>
+<div class="slot"></div>
+<div class="slot"></div>
 
 </div>
 
-
-
-</div>
-
-
-<!-- PUZZLE WINDOW -->
-
-<div id="puzzleWindow" class="hidden">
-
-    <div id="puzzleBox">
-
-        <h2 id="puzzleTitle">
-        </h2>
-
-
-        <p id="puzzleText">
-        </p>
-
-
-        <input 
-        id="puzzleInput"
-        type="text"
-        placeholder="Enter code">
-
-
-        <br>
-
-
-        <button onclick="checkPuzzle()">
-            Unlock
-        </button>
-
-
-        <button onclick="closePuzzle()">
-            Close
-        </button>
-
-
-    </div>
+</footer>
 
 </div>
+
 <script src="game.js"></script>
-
 
 </body>
 
