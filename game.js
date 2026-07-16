@@ -1,342 +1,79 @@
-// BLACK HOLLOW GAME LOGIC
+// ==============================
+// BLACK HOLLOW V1
+// ==============================
 
-
-const startButton = document.getElementById("startButton");
-
+// Screens
 const titleScreen = document.getElementById("titleScreen");
-
 const gameScreen = document.getElementById("gameScreen");
 
-const speaker = document.getElementById("speaker");
+// Button
+const startButton = document.getElementById("startButton");
 
+// Dialogue
+const speaker = document.getElementById("speaker");
 const dialogue = document.getElementById("dialogue");
 
-const items = document.getElementById("items");
+// Notebook
+const notes = document.getElementById("notes");
 
-const clues = document.getElementById("clues");
-const puzzleWindow = document.getElementById("puzzleWindow");
+// Hotspots
+const deskSpot = document.getElementById("deskSpot");
+const cellSpot = document.getElementById("cellSpot");
+const doorSpot = document.getElementById("doorSpot");
+const windowSpot = document.getElementById("windowSpot");
 
-const puzzleTitle = document.getElementById("puzzleTitle");
-
-const puzzleText = document.getElementById("puzzleText");
-
-const puzzleInput = document.getElementById("puzzleInput");
-
-
-let currentPuzzle = "";
-
-
-let inventory = [];
-
-let evidence = [];
-
-
-
+// ==============================
 // START GAME
+// ==============================
 
-startButton.onclick = function(){
+startButton.addEventListener("click", () => {
 
-    alert("The investigation has started!");
+    titleScreen.classList.add("hidden");
+    gameScreen.classList.remove("hidden");
 
-};
+    speaker.textContent = "Sheriff Crowe";
 
+    dialogue.textContent =
+        "Welcome to Black Hollow Jail, Detective. Judge Theodore Graves was found dead inside Cell 7. Search the room carefully.";
 
-    speaker.innerHTML = "Sheriff Crowe";
+});
 
+// ==============================
+// HOTSPOTS
+// ==============================
 
-    dialogue.innerHTML =
+deskSpot.addEventListener("click", () => {
 
-    `
-    "You're the detective they sent?"
+    speaker.textContent = "Desk";
 
-    <br><br>
+    dialogue.textContent =
+        "The Sheriff's desk is covered in old reports. One drawer appears to be locked.";
 
-    Judge Theodore Graves was found inside Cell 7.
+});
 
-    <br><br>
+cellSpot.addEventListener("click", () => {
 
-    Nobody entered.
+    speaker.textContent = "Cell 7";
 
-    Nobody left.
+    dialogue.textContent =
+        "The victim was discovered here. Something about the scratches on the wall seems unusual.";
 
-    <br><br>
+});
 
-    Find the truth hidden inside Black Hollow Jail.
-    `;
+doorSpot.addEventListener("click", () => {
 
-};
+    speaker.textContent = "Front Door";
 
+    dialogue.textContent =
+        "The heavy jail door is locked from the inside.";
 
+});
 
+windowSpot.addEventListener("click", () => {
 
-// INVENTORY
+    speaker.textContent = "Window";
 
-function addItem(item){
+    dialogue.textContent =
+        "Rain pours outside. You notice faint muddy footprints beneath the window.";
 
-    if(!inventory.includes(item)){
-
-        inventory.push(item);
-
-        items.innerHTML =
-        inventory.join("<br>");
-
-    }
-
-}
-
-
-
-// CLUES
-
-function addClue(clue){
-
-    if(!evidence.includes(clue)){
-
-        evidence.push(clue);
-
-        clues.innerHTML =
-        evidence.map(x => `<li>✓ ${x}</li>`).join("");
-
-    }
-
-}
-
-
-
-
-// OBJECTS
-
-
-function inspectDesk(){
-
-openPuzzle("desk");
-
-}
-
-speaker.innerHTML="Old Desk";
-
-dialogue.innerHTML=
-
-`
-You search the desk.
-
-<br><br>
-
-Inside the drawer you find a rusty key.
-
-`;
-
-addItem("🔑 Rusty Cell Key");
-
-addClue("A key labeled Cell 7 was found.");
-
-}
-
-
-
-
-function inspectCell(){
-
-speaker.innerHTML="Cell 7";
-
-dialogue.innerHTML=
-
-`
-The cell walls are scratched.
-
-<br><br>
-
-Someone carved:
-
-<br><br>
-
-<b>HE NEVER LEFT</b>
-
-`;
-
-addClue("A mysterious message was found.");
-
-}
-
-
-
-
-function inspectLantern(){
-
-speaker.innerHTML="Lantern";
-
-dialogue.innerHTML=
-
-`
-The flame flickers.
-
-<br><br>
-
-For a moment...
-
-a shadow moves behind you.
-
-`;
-
-addClue("A strange shadow appeared.");
-
-}
-
-
-
-
-function inspectDoor(){
-
-speaker.innerHTML="Jail Door";
-
-
-if(inventory.includes("🔑 Rusty Cell Key")){
-
-
-dialogue.innerHTML=
-
-`
-The key turns.
-
-<br><br>
-
-The door slowly opens...
-`;
-
-addClue("Cell 7 has been unlocked.");
-
-
-}
-
-else{
-
-
-dialogue.innerHTML=
-
-`
-The door is locked.
-
-<br><br>
-
-You need a key.
-
-`;
-
-}
-
-}
-// PUZZLE SYSTEM
-
-
-function openPuzzle(type){
-
-
-currentPuzzle = type;
-
-
-puzzleWindow.classList.remove("hidden");
-
-
-puzzleInput.value="";
-
-
-
-if(type==="desk"){
-
-
-puzzleTitle.innerHTML =
-"Sheriff's Locked Desk";
-
-
-puzzleText.innerHTML =
-
-`
-The drawer is locked.
-
-<br><br>
-
-A note reads:
-
-<br>
-
-"The year Black Hollow Jail opened."
-
-`;
-
-}
-
-
-}
-
-
-
-
-function closePuzzle(){
-
-puzzleWindow.classList.add("hidden");
-
-}
-
-
-
-
-function checkPuzzle(){
-
-
-let answer = puzzleInput.value;
-
-
-
-if(currentPuzzle==="desk"){
-
-
-if(answer==="1847"){
-
-
-closePuzzle();
-
-
-speaker.innerHTML="Old Desk";
-
-
-dialogue.innerHTML=
-
-`
-The lock clicks open.
-
-<br><br>
-
-Inside you find:
-
-<br><br>
-
-🔑 Rusty Cell Key
-
-<br>
-
-📜 Torn Letter
-
-`;
-
-
-addItem("🔑 Rusty Cell Key");
-
-addClue("A torn letter was found inside the sheriff's desk.");
-
-
-}
-
-else{
-
-
-puzzleText.innerHTML=
-
-"Wrong code. Search the jail for clues.";
-
-}
-
-
-}
-
-
-}
+});
