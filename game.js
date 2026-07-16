@@ -35,7 +35,7 @@ startButton.addEventListener("click", () => {
     titleScreen.style.display = "none";
     gameScreen.style.display = "flex";
 
-
+});
     speaker.textContent = "Sheriff Crowe";
 
     dialogue.textContent =
