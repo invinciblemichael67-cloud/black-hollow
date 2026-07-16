@@ -298,7 +298,9 @@ footer{
     width:70px;
 
     height:70px;
-
+.hidden{
+    display:none !important;
+}
     background:#333;
 
     border:2px solid #666;
