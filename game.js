@@ -1,9 +1,9 @@
-console.log("GAME.JS IS LOADING");
-alert("GAME.JS LOADED");
+
 // ==============================
 // BLACK HOLLOW V1
 // ==============================
-
+console.log("GAME.JS IS LOADING");
+alert("GAME.JS LOADED");
 // Screens
 const titleScreen = document.getElementById("titleScreen");
 const gameScreen = document.getElementById("gameScreen");
