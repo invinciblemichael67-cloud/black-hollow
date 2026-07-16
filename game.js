@@ -42,7 +42,6 @@ startButton.addEventListener("click", () => {
     dialogue.textContent =
         "Welcome to Black Hollow Jail, Detective. Judge Theodore Graves was found dead inside Cell 7. Search the room carefully.";
 
-});
 
 // ==============================
 // HOTSPOTS
