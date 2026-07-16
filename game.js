@@ -30,7 +30,6 @@ const windowSpot = document.getElementById("windowSpot");
 
 startButton.addEventListener("click", () => {
 
-    alert("Button works!");
 
     titleScreen.classList.add("hidden");
     gameScreen.classList.remove("hidden");
