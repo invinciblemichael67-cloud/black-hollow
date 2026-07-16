@@ -1,3 +1,5 @@
+console.log("GAME.JS IS LOADING");
+alert("GAME.JS LOADED");
 // ==============================
 // BLACK HOLLOW V1
 // ==============================
